@@ -567,6 +567,12 @@ OptionMenu "DoomRPGStart"
     Slider "Shells", "drpg_start_ammo_shell", 0, 500, 1
     Slider "Rockets", "drpg_start_ammo_rocket", 0, 500, 1
     Slider "Cells", "drpg_start_ammo_cell", 0, 3000, 1
+	StaticText ""
+	Slider "Bullets multiplier", "drpg_mult_ammo_bullet", 5, 50, 5
+	Slider "Shells multiplier", "drpg_mult_ammo_shell", 1, 10, 1
+	Slider "Rockets multiplier", "drpg_mult_ammo_rocket", 1, 10, 1
+	Slider "Cells multiplier", "drpg_mult_ammo_cell", 5, 50, 5
+	StaticText ""
     Option "Armor", "drpg_start_armor", "StartArmorType"
 	StaticText ""
     

@@ -222,6 +222,12 @@ user    int     drpg_start_ammo_rocket = 0;
 user    int     drpg_start_ammo_cell = 0;
 user    int     drpg_start_armor = -1;
 
+// AmmoMultipliers
+user	int	drpg_mult_ammo_bullet = 20;
+user	int	drpg_mult_ammo_shell = 5;
+user	int	drpg_mult_ammo_rocket = 5;
+user	int	drpg_mult_ammo_cell = 30;
+
 // Augs
 user    int     drpg_start_aug_amount = 0;
 user    int     drpg_start_aug_upgrades = 0;

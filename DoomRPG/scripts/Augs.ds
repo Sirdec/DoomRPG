@@ -384,10 +384,10 @@ function void CheckAugs()
         if (Player.Augs.Level[AUG_CAPACITY] >= 3)
             Player.Stim.VialMax *= 2;
         
-        SetAmmoCapacity("Clip", Player.Capacity * 20 * AmmoMult);
-        SetAmmoCapacity("Shell", Player.Capacity * 5 * AmmoMult);
-        SetAmmoCapacity("RocketAmmo", Player.Capacity * 5 * AmmoMult);
-        SetAmmoCapacity("Cell", Player.Capacity * 30 * AmmoMult);
+        SetAmmoCapacity("Clip", Player.Capacity * GetActivatorCVar("drpg_mult_ammo_bullet") * AmmoMult);
+        SetAmmoCapacity("Shell", Player.Capacity * GetActivatorCVar("drpg_mult_ammo_shell") * AmmoMult);
+        SetAmmoCapacity("RocketAmmo", Player.Capacity * GetActivatorCVar("drpg_mult_ammo_rocket") * AmmoMult);
+        SetAmmoCapacity("Cell", Player.Capacity * GetActivatorCVar("drpg_mult_ammo_cell") * AmmoMult);
     };
 
     // Luck Aug

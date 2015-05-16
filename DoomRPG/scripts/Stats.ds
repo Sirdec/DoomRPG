@@ -368,10 +368,10 @@ function void CheckStats()
     Player.Speed = 1.0 + 0.25 * ((fixed)Player.Agility / 100);
     Player.JumpHeight = 8.0 + (8.0 * ((fixed)Player.Agility / 100));
     Player.WeaponSpeed = Player.Agility;
-    SetAmmoCapacity("Clip", Player.Capacity * 20);
-    SetAmmoCapacity("Shell", Player.Capacity * 5);
-    SetAmmoCapacity("RocketAmmo", Player.Capacity * 5);
-    SetAmmoCapacity("Cell", Player.Capacity * 30);
+    SetAmmoCapacity("Clip", Player.Capacity * GetActivatorCVar("drpg_mult_ammo_bullet"));
+    SetAmmoCapacity("Shell", Player.Capacity * GetActivatorCVar("drpg_mult_ammo_shell"));
+    SetAmmoCapacity("RocketAmmo", Player.Capacity * GetActivatorCVar("drpg_mult_ammo_rocket"));
+    SetAmmoCapacity("Cell", Player.Capacity * GetActivatorCVar("drpg_mult_ammo_cell"));
     Player.Stim.VialMax = Player.Capacity * 10;
     Player.SurvivalBonus = (fixed)Player.Agility / 10.0;
     

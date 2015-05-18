@@ -316,14 +316,24 @@ script void ReduceMonsterCount(bool *WaitLock)
         return;
     };
     
-    if (TotalMonsters * GetCVar("drpg_monster_population") / 100 == TotalMonsters)
+    if (TotalMonsters * GetCVar("drpg_monster_population") / 100 == TotalMonsters && ((GetCVar("drpg_limit_monster_population") == false) || (GetCVar("drpg_maximum_monster_population") >= TotalMonsters)))
     {
         *WaitLock = false;
         return;
     };
     
-    int MonstersToRemove = TotalMonsters - (TotalMonsters * GetCVar("drpg_monster_population") / 100);
-    
+	int MonstersToRemove;
+	
+	if (GetCVar("drpg_limit_monster_population") == true)
+	{
+		if (TotalMonsters + (TotalMonsters * GetCVar("drpg_monster_population") / 100) > GetCVar("drpg_maximum_monster_population"))
+			MonstersToRemove = TotalMonsters - GetCVar("drpg_maximum_monster_population")
+		else
+			MonstersToRemove = TotalMonsters - (TotalMonsters * GetCVar("drpg_monster_population") / 100);
+	}
+	else
+	    MonstersToRemove = TotalMonsters - (TotalMonsters * GetCVar("drpg_monster_population") / 100);
+
     if (MonstersToRemove < 0)
     {
         MonstersToRemove = -MonstersToRemove;

@@ -244,6 +244,8 @@ OptionMenu "DoomRPGDifficulty"
 	StaticText ""
     
 	Slider "Monster Population %", "drpg_monster_population", 10.0, 200.0, 1.0
+	Option "Limit maximum ammount of monsters ?", "drpg_limit_monster_population", "OnOff"
+	Slider "Maximum monsters per level", "drpg_maximum_monster_population", 10, 2000, 10
 	StaticText ""
     
 	Slider "Map Special Event Chance", "drpg_mapevent_chance", 0.0, 100.0, 1.0

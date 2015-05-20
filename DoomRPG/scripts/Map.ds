@@ -384,7 +384,7 @@ script void SetupMapMissions()
         if (!PlayerInGame(i)) continue;
         
         // Kill
-        if (Players(i).Mission.Active && Players(i).Mission.Type == MT_KILL)
+        if (Players(i).Mission.Active && Players(i).Mission.Type == MT_KILL && GetCVar("drpg_mission_helper") == true)
         {
             int Amount = Players(i).Mission.Amount - Players(i).Mission.Current;
             DynamicLootGenerator(GetMissionMonsterActor(Players(i).Mission.Monster->Actor), Amount);

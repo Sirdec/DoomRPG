@@ -213,6 +213,7 @@ OptionMenu "DoomRPGMonsters"
     Option "Monster Level System", "drpg_monster_levels", "MonsterLevelType"
 	StaticText ""
     
+	Slider "Base Monster Level", "drpg_monster_base_level", 0, 1000, 1
 	Slider "Monster Level Weight", "drpg_monster_level_weight", 0.5, 10.0, 0.1
 	Slider "Monster Map Weight", "drpg_monster_map_weight", 0.5, 10.0, 0.1
     Slider "Monster Random Min Multiplier", "drpg_monster_random_min_mult", 0.5, 10.0, 0.1
@@ -252,6 +253,9 @@ OptionMenu "DoomRPGDifficulty"
 	Slider "Event Interval (Minutes)", "drpg_mapevent_eventtime", 0, 120, 1
     Slider "Default Event Par (Seconds)", "drpg_default_par_seconds", 30, 600, 15
     Option "Bonus Events", "drpg_bonus_events", "OnOff"
+	StaticText ""
+	
+	Option "Generate mission objectives", "drpg_mission_helper", "OnOff"
 	StaticText ""
 	
     Option "Dynamic Loot System", "drpg_loot_system", "OnOff"

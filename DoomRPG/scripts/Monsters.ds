@@ -495,6 +495,8 @@ script void MonsterInitStats(int StatFlags)
     if (CurrentLevel->UACBase && ArenaActive)
         LevelNum = ArenaWave / 3;
     
+	MonsterLevel = GetCVar("drpg_monster_base_level");
+	
     // Calculate Monster Level
     if (LevelType == 1 || LevelType == 3) // Player Level
         MonsterLevel += (int)((fixed)AveragePlayerLevel() * LevelWeight);
@@ -597,9 +599,12 @@ script void MonsterInitStats(int StatFlags)
     {
         // Check to see if any players have a Kill Auras mission
         int AuraMissionAdd = 0;
-        for (int i = 0; i < MAX_PLAYERS; i++)
-            if (Players(i).Mission.Type == MT_KILLAURAS)
-                AuraMissionAdd += Players(i).Mission.Amount;
+		if (GetCVar("drpg_mission_helper") == true)
+		{
+			for (int i = 0; i < MAX_PLAYERS; i++)
+				if (Players(i).Mission.Type == MT_KILLAURAS)
+					AuraMissionAdd += Players(i).Mission.Amount;
+		};
         
         // Hell skill and above always has an additional +20% chance
         if (GameSkill() >= 5)
